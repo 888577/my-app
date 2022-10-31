@@ -1,0 +1,9 @@
+<p>eventregistration works!</p>
+<h1>event-registration</h1>
+<label>name:</label>
+<input type="text"[(ngModel)]="name"><br>
+<button (click)="register()">Register</button>
+<ol>
+   <li *ngFor="let name of names">{{name}}</li> 
+</ol>
+<button (click)="delete()">delete</button>

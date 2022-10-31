@@ -1,0 +1,8 @@
+<p>mail works!</p>
+<div *ngFor="let mail of mails" class="mail"[ngStyle]="{'font-weight':mail.completed==true?100:900}">
+    <h4>{{mail.userId}}
+    {{mail.id}}
+    title:{{mail.title}}
+    completed:{{mail.completed}}</h4>
+
+</div>
