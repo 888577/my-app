@@ -1,0 +1,49 @@
+<p>create-product works!</p>
+<h1><ins>create product form</ins></h1>
+<form [formGroup]="productForm">
+    <label>Name:</label>
+    <input type="text" formControlName="name"><br>
+    <label>price:</label>
+    <input type="number" formControlName="price"><br>
+    <label>Expiry:</label>
+    <input type="date" formControlName="dob"><br>
+
+    <h2>Address</h2>
+    <div formGroupName="address">
+        <label>H.NO:</label>
+        <input type="number"formControlName="H.NO"><br>
+        <label>city:</label>
+        <input type="text"formControlName="city"><br>
+        <label>pin:</label>
+        <input type="number"formControlName="pin">
+   </div>
+   <button (click)="add()">add comments</button><br>
+   <div *ngFor="let card of cardsFormArray?.controls;let i=index">
+    <div formGroupName="{{i}}">
+        <input type="text"formControlName="name"placeholder="name"><br>
+        <input type="number"formControlName="price"placeholder="price"><br>
+        <input type="date"formControlName="expiry"placeholder="expiry"><br>
+        <br><br>
+        <button class="btn btn-danger"(click)="delete(i)">delete</button>
+
+    </div>
+   </div><br>
+   <label>Payment type:</label>
+   <input type="radio" name="type" formControlName="type" value="upi">
+   <label>upi</label>
+   <input type="radio" name="type" formControlName="type" value="card">
+   <label>card</label><br><br>
+   <div *ngIf="productForm.get('type')?.value=='upi'">
+<label>upi Id:</label>
+<input type="number"formControlName="upiId"><br>
+   </div>
+   <div *ngIf="productForm.get('type')?.value=='card'">
+    <label>card number:</label>
+    <input type="number"formControlName="cardNumber"> 
+    </div>
+    <button (click)="submit()">submit</button>
+
+
+
+
+</form>

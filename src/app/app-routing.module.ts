@@ -9,6 +9,7 @@ import { CarsComponent } from './cars/cars.component';
 import { CartComponent } from './cart/cart.component';
 import { CircleComponent } from './circle/circle.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EmployeeregistrationComponent } from './employeeregistration/employeeregistration.component';
@@ -60,7 +61,8 @@ const routes: Routes = [
    {path:'bank-details/:id',component:BankDetailsComponent},
    {path:'create-account',component:CreateAccountComponent,canDeactivate:[NotifyGuard]},
    {path:'vehicle-details/:id',component:VehicleDetailsComponent},
-   {path:'create-user',component:CreateUserComponent}
+   {path:'create-user',component:CreateUserComponent},
+   {path:'create-product',component:CreateProductComponent}
 ]},
 
   {path:'',component:LoginComponent},
